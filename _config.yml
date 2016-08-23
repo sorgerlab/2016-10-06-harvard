@@ -31,8 +31,8 @@ swc_pages: "https://swcarpentry.github.io"
 template_repo: "https://github.com/swcarpentry/styles"
 example_repo: "https://github.com/swcarpentry/lesson-example"
 example_site: "https://swcarpentry.github.com/lesson-example"
-workshop_repo: "https://github.com/swcarpentry/workshop-template"
-workshop_site: "https://swcarpentry.github.io/workshop-template"
+workshop_repo: "https://github.com/sorgerlab/2016-10-06-harvard"
+workshop_site: "https://sorgerlab.github.io/2016-10-06-harvard"
 
 # Surveys.
 pre_survey: "https://www.surveymonkey.com/r/swc_pre_workshop_v1?workshop_id="
