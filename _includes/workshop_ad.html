@@ -6,6 +6,9 @@
         <div class="col-md-6">
           <p>{{page.humandate}}</p>
           <p>{% if page.humantime %}{{page.humantime}}{% endif %}</p>
+          {% if page.room %}
+          <p><strong>{{page.room}}</strong></p>
+          {% endif %}
         </div>
         <div class="col-md-6">
           <p>
@@ -21,6 +24,9 @@
           <strong>Helpers:</strong>
           {{page.helper | join: ', ' %}}
           </p>
+          {% endif %}
+          {% if page.etherpad %}
+          <p><strong><a href="{{page.etherpad}}">Etherpad</a></strong><p>
           {% endif %}
         </div>
       </div>
