@@ -7,7 +7,9 @@
           <p>{{page.humandate}}</p>
           <p>{% if page.humantime %}{{page.humantime}}{% endif %}</p>
           {% if page.room %}
-          <p><strong>{{page.room}}</strong></p>
+          <a href="//maps.google.com/maps?q={{page.latlng}}">
+            <p>{{page.room}}</p>
+          </a>
           {% endif %}
         </div>
         <div class="col-md-6">
