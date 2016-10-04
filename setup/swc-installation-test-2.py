@@ -85,7 +85,7 @@ CHECKS = [
 # Shell
     'virtual-shell',
 # Editors
-    'virtual-editor',
+    'nano',
 # Browsers
     'virtual-browser',
 # Version control
