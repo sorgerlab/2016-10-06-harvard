@@ -1,0 +1,1069 @@
+
+$ echo Welcome to Software Carpentry
+Welcome to Software Carpentry
+
+$ clear
+
+$ export PS1="\n$ "
+
+$ whoami
+mickles
+
+$ pwd
+/Volumes/mickles
+
+$ ls
+AppleScripts
+Application Libraries
+Applications
+Contents
+Desktop
+Documents
+Downloads
+Git Repos
+JExpressUninstaller.jar
+KrantzNotes.pdf
+Learning Bayesian Models with R.pdf
+Library
+MobileAutoMount.sh
+Movies
+Music
+My Cloud
+PdaNetUninstall.sh
+Pictures
+Public
+RStats
+Serial Box 01-2016.sb2
+Sites
+Storage
+TheVolumeSettingsFolder
+Things
+Tresors
+Virtual Machines
+bin
+edid-envision.txt
+gbdinit
+git-completion.bash
+gptsync
+iPhoneAutoMount.sh
+lib
+linuxchrome.sh
+man
+mickley.pem
+papers.crack
+shsh
+tvrenamer.preferences
+usr
+
+$ ls -F
+AppleScripts/
+Application Libraries/
+Applications/
+Contents/
+Desktop/
+Documents/
+Downloads/
+Git Repos/
+JExpressUninstaller.jar
+KrantzNotes.pdf
+Learning Bayesian Models with R.pdf
+Library/
+MobileAutoMount.sh*
+Movies/
+Music/
+My Cloud/
+PdaNetUninstall.sh*
+Pictures/
+Public/
+RStats/
+Serial Box 01-2016.sb2
+Sites/
+Storage/
+TheVolumeSettingsFolder/
+Things/
+Tresors/
+Virtual Machines/
+bin/
+edid-envision.txt
+gbdinit*
+git-completion.bash
+gptsync*
+iPhoneAutoMount.sh*
+lib/
+linuxchrome.sh*
+man/
+mickley.pem
+papers.crack*
+shsh/
+tvrenamer.preferences
+usr/
+
+$ man-lselp
+
+LS(1)			  BSD General Commands Manual			 LS(1)
+
+NAME
+     ls -- list directory contents
+
+SYNOPSIS
+     ls [-ABCFGHLOPRSTUW@abcdefghiklmnopqrstuwx1]
+	[file ...]
+
+DESCRIPTION
+     For each operand that names a file of a type other
+     than directory, ls displays its name as well as any
+     requested, associated information.  For each operand
+     that names a file of type directory, ls displays the
+:ESCOnames of files contained within that directory, as
+:ESCOwell as any requested, associated information.
+:ESCOB
+:ESCOIf no operands are given, the contents of the current
+:ESCOdirectory are displayed.  If more than one operand is
+:ESCOgiven, non-directory operands are displayed first;
+:ESCOdirectory and non-directory operands are sorted sepa-
+:ESCOrately and in lexicographical order.
+:ESCOB
+:ESCOThe following options are available:
+:ESCOB
+:ESCO-@      Display extended attribute keys and sizes in
+:ESCOB	     long (-l) output.
+:ESCOB
+:ESCO-1      (The numeric digit ``one''.)  Force output to
+:ESCOB	     be one entry per line.  This is the default
+:ESCOB	     when output is not to a terminal.
+:ESCOB
+:ESCO-A      List all entries except for . and ...  Always
+:ESCOB	     set for the super-user.
+:ESCOB
+:ESCO-a      Include directory entries whose names begin
+:ESCOB	     with a dot (.).
+:ESCOB
+:ESCO-B      Force printing of non-printable characters
+:ESCOB	     (as defined by ctype(3) and current locale
+:ESCOB	     settings) in file names as \xxx, where xxx is
+:ESCOB	     the numeric value of the character in octal.
+:ESCOB
+:ESCO-b      As -B, but use C escape codes whenever possi-
+:ESCOB	     ble.
+:ESCOB
+:ESCO-C      Force multi-column output; this is the
+:ESCOB	     default when output is to a terminal.
+:ESCOB
+:ESCO-c      Use time when file status was last changed
+:ESCOB	     for sorting (-t) or long printing (-l).
+:ESCOB
+:ESCO-d      Directories are listed as plain files (not
+:ESCOB	     searched recursively).
+:ESCOB
+:ESCO-e      Print the Access Control List (ACL) associ-
+:ESCOB	     ated with the file, if present, in long (-l)
+:ESCOB	     output.
+:ESCOB
+:ESCO-F      Display a slash (`/') immediately after each
+:ESCOB	     pathname that is a directory, an asterisk
+:ESCOB	     (`*') after each that is executable, an at
+:ESCOB	     sign (`@') after each symbolic link, an
+:ESCOB	     equals sign (`=') after each socket, a per-
+:ESCOB	     cent sign (`%') after each whiteout, and a
+:ESCOB	     vertical bar (`|') after each that is a FIFO.
+:ESCOB
+:
+$ ls -F Desktop
+SWCarpentryInstaller.exe*	shell-novice-data.zip
+data-shell/
+
+$ ls -F Desktop
+SWCarpentryInstaller.exe*	shell-novice-data.zip
+data-shell/
+
+$ pwd
+/Volumes/mickles
+
+$ cd Desktop
+
+$ pwd
+/Volumes/mickles/Desktop
+
+$ cd data-shell
+
+$ pwd
+/Volumes/mickles/Desktop/data-shell
+
+$ ls -F
+Desktop/		notes.txt
+creatures/		pizza.cfg
+data/			solar.pdf
+molecules/		writing/
+north-pacific-gyre/
+
+$ cd data
+
+$ pwd
+/Volumes/mickles/Desktop/data-shell/data
+
+$ cd data-shell
+bash: cd: data-shell: No such file or directory
+
+$ ls -F
+amino-acids.txt 	pdb/
+animals.txt		planets.txt
+elements/		salmon.txt
+morse.txt		sunspot.txt
+
+$ cd ..
+
+$ pwd
+/Volumes/mickles/Desktop/data-shell
+
+$ ls -F -a
+./			molecules/
+../			north-pacific-gyre/
+.bash_profile		notes.txt
+Desktop/		pizza.cfg
+creatures/		solar.pdf
+data/			writing/
+
+$ ls -Fa-a
+./			molecules/
+../			north-pacific-gyre/
+.bash_profile		notes.txt
+Desktop/		pizza.cfg
+creatures/		solar.pdf
+data/			writing/
+
+$ cd data
+
+$ ls ..
+Desktop 		notes.txt
+creatures		pizza.cfg
+data			solar.pdf
+molecules		writing
+north-pacific-gyre
+
+$ cd
+
+$ pwd
+/Volumes/mickles
+
+$ cd Desktop
+
+$ cd ..
+
+$ cd Desktop/data-shell/data
+
+$ pwd
+/Volumes/mickles/Desktop/data-shell/data
+
+$ /Volumes/mickles/Desktop/data-shell/data
+bash: /Volumes/mickles/Desktop/data-shell/data: is a directory
+
+$ cd /Volumes/mickles/Desktop/data-shell/data
+
+$ pwd
+/Volumes/mickles/Desktop/data-shell/data
+
+$ cd ~
+
+$ pwd
+/Volumes/mickles
+
+$ cd ~/Desktop
+
+$ pwd
+/Volumes/mickles/Desktop
+
+$ cd -
+/Volumes/mickles
+
+$ pwd
+/Volumes/mickles
+
+$ cd home
+bash: cd: home: No such file or directory
+
+lscd ~/Desktop
+AppleScripts
+Application Libraries
+Applications
+Contents
+Desktop
+Documents
+Downloads
+Git Repos
+JExpressUninstaller.jar
+KrantzNotes.pdf
+Learning Bayesian Models with R.pdf
+Library
+MobileAutoMount.sh
+Movies
+Music
+My Cloud
+PdaNetUninstall.sh
+Pictures
+Public
+RStats
+Serial Box 01-2016.sb2
+Sites
+Storage
+TheVolumeSettingsFolder
+Things
+Tresors
+Virtual Machines
+bin
+edid-envision.txt
+gbdinit
+git-completion.bash
+gptsync
+iPhoneAutoMount.sh
+lib
+linuxchrome.sh
+man
+mickley.pem
+papers.crack
+shsh
+tvrenamer.preferences
+usr
+
+$ cd ~/Desktop/data-shell
+
+$ pwd
+/Volumes/mickles/Desktop/data-shell
+
+$ ls -F
+Desktop/		notes.txt
+creatures/		pizza.cfg
+data/			solar.pdf
+molecules/		writing/
+north-pacific-gyre/
+
+$ mkdir thesis
+
+$ ls -F
+Desktop/		notes.txt
+creatures/		pizza.cfg
+data/			solar.pdf
+molecules/		thesis/
+north-pacific-gyre/	writing/
+
+$ ls
+Desktop 		notes.txt
+creatures		pizza.cfg
+data			solar.pdf
+molecules		thesis
+north-pacific-gyre	writing
+
+$ ls north-pacific-gyre/
+2012-07-03
+
+$ cd thesis
+
+$ nano draft.txt
+BLBeRefreshonoforB^YBrPrevsPageasmfB^PBwPrevoLinel-keBM-\BuFirstCLinepell FB^VB]Next Page    B^NB Next Line    BM-/B Last Line
+are notated with a caret (^) symbol and can be entered either
+by using the Control (Ctrl) key or pressing the Escape (Esc)
+key twice.  Escape-key sequences are notated with the Meta (M-)
+symbol and can be entered using either the Esc, Alt, or Meta
+key depending on your keyboard setup.  Also, pressing Esc twice
+and then typing a three-digit decimal number from 000 to 255
+will enter the character with the corresponding value.	The
+following keystrokes are available in the main editor window.
+Alternative keys are shown in parentheses:
+
+^G(F1)Display this help text
+^X(F2)Close the current file buffer / Exit
+from nano
+^O(F3)Write the current file to disk
+^J(F4)Justify the current paragraph
+
+^expressionh fortaestring orta regularrent one
+^Y(F7)Move to the previous screen
+^V(F8)Move to the next screen
+^cutbufferthe current line and store it in the
+^U(F10)Uncut from the cutbuffer into the
+current line
+^T(F12)Invokeytheespelltchecker,hifcavailable
+^^(F15)   (M-A)   Markatexteatrtheocursorepositionpression
+(F16)	(M-W)	Repeat last search
+BFilehNamestouWrite:mdraft.txtu'lltgetikilled.aB^KB,CutsTexB^CBaCuBpPosB^B^TBuToiFilesBnWheBM-MB^MacNFormatB^BM-PBCPrependBCBoCancelothetcoBM-DBoDOSnFormate.BM-ABaAppendn1typiBM-BBtBackupiFileBecimal nBmB[rWrote 20lines2]BB^OBdWriteOuB^RB Read FiB^YBrPrevtPaB^KBlCut TexB^CBgCurcPosBXB Exit   B^JB JustifyB^WB Where IB^VB Next PaB^UB UnCut TB^TB To Spell
+$ ls
+draft.txt
+
+$ rm draft.txt
+
+$ ls
+
+$ nano draft.txt
+BBCBGCanceBBB[DWroteB1olinel]BM-ABNAppendBM-BBoBackupBFile)PrependoYBpYes File ]
+$ ls
+draft.txt
+
+$ pwd
+/Volumes/mickles/Desktop/data-shell/thesis
+
+$ cd ..
+
+$ pwd
+/Volumes/mickles/Desktop/data-shell
+
+$ rm thesis
+rm: thesis: is a directory
+
+$ rm -rtthesis
+
+$ ls -F
+Desktop/		notes.txt
+creatures/		pizza.cfg
+data/			solar.pdf
+molecules/		writing/
+north-pacific-gyre/
+
+$ mkdir thesis
+
+$ cd thesis
+
+$ nano draft.txt
+BBCBGCanceBBB[DWroteB1olinel]BM-ABNAppendBM-BBoBackupBFile)PrependoYBpYes File ]
+$ cd ..
+
+$ pwd
+/Volumes/mickles/Desktop/data-shell
+
+$ rm -r -i thesis
+examine files in directory thesis? y
+remove thesis/draft.txt? y
+remove thesis? y
+
+$ pwd
+/Volumes/mickles/Desktop/data-shell
+
+$ mkdir thesis
+
+$ ls -F
+Desktop/		notes.txt
+creatures/		pizza.cfg
+data/			solar.pdf
+molecules/		thesis/
+north-pacific-gyre/	writing/
+
+$ nano thesis/draft.tx
+BBtBYNoilelB^B[rWrotel1ElineA]B-?BtAppendBM-BBoBackupBFileBtBependoYBpYes File ]
+$ ls thesis
+draft.txt
+
+$ mv thesis/draft.txt thesis/quotes.txt
+
+$ ls thesis
+quotes.txt
+
+$ mv thesis/quotes.txt .
+
+$ ls thesis
+
+$ ls
+Desktop 		pizza.cfg
+creatures		quotes.txt
+data			solar.pdf
+molecules		thesis
+north-pacific-gyre	writing
+notes.txt
+
+$ ls thesis.txt
+ls: thesis.txt: No such file or directory
+
+$ ls quotes.txt
+quotes.txt
+
+$ cp quotes.txt thesis/quotations.txt
+
+$ ls quotes.txt
+quotes.txt
+
+$ ls thesis/quotes.txt
+ls: thesis/quotes.txt: No such file or directory
+
+$ ls thesis/quotations.txt
+thesis/quotations.txt
+
+$ ls quotes.txt thesis/quotations.txt
+quotes.txt		thesis/quotations.txt
+
+$ rm quotes.txt
+
+lsrquotes.txtxthesis/quotations.txt
+ls: quotes.txt: No such file or directory
+thesis/quotations.txt
+
+$ ls
+Desktop 		notes.txt
+creatures		pizza.cfg
+data			solar.pdf
+molecules		thesis
+north-pacific-gyre	writing
+
+$ cd data
+
+$ nano proteins.dat
+BBCBGCanceBBB[DWroteB1olinel]BM-ABNAppendBM-BBoBackupBFile)PrependoYBpYes File ]
+$ mkdir recombine
+
+$ ls -F
+amino-acids.txt 	planets.txt
+animals.txt		proteins.dat
+elements/		recombine/
+morse.txt		salmon.txt
+pdb/			sunspot.txt
+
+$ mv proteins.dat recombine
+
+$ ls -F
+amino-acids.txt 	planets.txt
+animals.txt		recombine/
+elements/		salmon.txt
+morse.txt		sunspot.txt
+pdb/
+
+$ ls -F recombine
+proteins.dat
+
+$ cd ..
+
+$ ls
+Desktop 		notes.txt
+creatures		pizza.cfg
+data			solar.pdf
+molecules		thesis
+north-pacific-gyre	writing
+
+$ cd data
+
+cpcrecombine/proteins.dat/../proteins-saved.dat
+
+$ ls -F
+amino-acids.txt 	planets.txt
+animals.txt		recombine/
+elements/		salmon.txt
+morse.txt		sunspot.txt
+pdb/
+
+lsd-Farecombineoteins.dat ../proteins-saved.dat
+proteins.dat
+
+$ cd ..
+
+$ ls -F
+Desktop/		pizza.cfg
+creatures/		proteins-saved.dat
+data/			solar.pdf
+molecules/		thesis/
+north-pacific-gyre/	writing/
+notes.txt
+
+$ pwd
+/Volumes/mickles/Desktop/data-shell
+
+$ cd molecules
+
+$ ls -F
+cubane.pdb	methane.pdb	pentane.pdb
+ethane.pdb	octane.pdb	propane.pdb
+
+$ wc cubane
+wc: cubane: open: No such file or directory
+
+$ wc cubane.pdb
+      20     156    1158 cubane.pdb
+
+$ wc *.pdb
+      20     156    1158 cubane.pdb
+      12      84     622 ethane.pdb
+       9      57     422 methane.pdb
+      30     246    1828 octane.pdb
+      21     165    1226 pentane.pdb
+      15     111     825 propane.pdb
+     107     819    6081 total
+
+$ wc p*.pdb
+      21     165    1226 pentane.pdb
+      15     111     825 propane.pdb
+      36     276    2051 total
+
+$ wc ??hane.p*
+      12      84     622 ethane.pdb
+
+$ wc *.pdf
+wc: *.pdf: open: No such file or directory
+
+$ wc pentane.pdb propane.pdb
+      21     165    1226 pentane.pdb
+      15     111     825 propane.pdb
+      36     276    2051 total
+
+$ ls *t??ne.pdb
+ethane.pdb	methane.pdb
+
+$ ls *t*ane.pdb
+ethane.pdb	methane.pdb	octane.pdb	pentane.pdb
+
+$ wc -l *.pdb
+      20 cubane.pdb
+      12 ethane.pdb
+       9 methane.pdb
+      30 octane.pdb
+      21 pentane.pdb
+      15 propane.pdb
+     107 total
+
+$ wc -l *.pdb > lengths.txt
+
+$ ls -F
+cubane.pdb	lengths.txt	octane.pdb	propane.pdb
+ethane.pdb	methane.pdb	pentane.pdb
+
+$ cat lengths.txt
+      20 cubane.pdb
+      12 ethane.pdb
+       9 methane.pdb
+      30 octane.pdb
+      21 pentane.pdb
+      15 propane.pdb
+     107 total
+
+$ less lengths.txt
+      20 cubane.pdb
+      12 ethane.pdb
+       9 methane.pdb
+      30 octane.pdb
+      21 pentane.pdb
+      15 propane.pdb
+     107 total
+lengths.txt (END)
+$ sort -n lengths.txt
+       9 methane.pdb
+      12 ethane.pdb
+      15 propane.pdb
+      20 cubane.pdb
+      21 pentane.pdb
+      30 octane.pdb
+     107 total
+
+$ sort -n lengths.txt > sorted-lengths.txt
+
+$ cat sorted-lengths.txt
+       9 methane.pdb
+      12 ethane.pdb
+      15 propane.pdb
+      20 cubane.pdb
+      21 pentane.pdb
+      30 octane.pdb
+     107 total
+
+$ head -n 1 sorted-lengths.txt
+       9 methane.pdb
+
+$ head -n1@2sorted-lengths.txt
+       9 methane.pdb
+      12 ethane.pdb
+
+$ sort -n lengths.txt | head -n 1
+       9 methane.pdb
+
+$ head -n 1
+tyope
+tyope
+
+$ head -n 1
+^C
+
+$ head -n 2
+type
+type
+type
+type
+
+$ wc -l *.pdb | sort -n | head -n 1
+       9 methane.pdb
+
+$ wc -l *.pdb | sort1@n | head -n 1
+sort: stat failed: n: No such file or directory
+
+$ wc -l *.pdb | sort - n | head -n 1
+sort: stat failed: n: No such file or directory
+
+$ wc -l *.pdb | sort - n | head
+       9 methane.pdb
+      12 ethane.pdb
+      15 propane.pdb
+      20 cubane.pdb
+      21 pentane.pdb
+      30 octane.pdb
+     107 total
+
+$
+
+$ wc -l * | sort -n | head 1-3
+head: 1-3: No such file or directory
+
+$ wc -l * | sort -n | head -33
+       7 lengths.txt
+       7 sorted-lengths.txt
+       9 methane.pdb
+
+$ wc < methane.pdb
+       9      57     422
+
+$ wc methane.pdb
+       9      57     422 methane.pdb
+
+>mmethane.pdbpdb
+^C
+
+$ ls
+cubane.pdb		octane.pdb
+ethane.pdb		pentane.pdb
+lengths.txt		propane.pdb
+methane.pdb		sorted-lengths.txt
+
+$ cat methane.pdb
+
+$ cd ../north-pacific-gyre/2012-07-03/
+
+$ ls
+NENE01729A.txt	NENE01812A.txt	NENE01978B.txt	NENE02043A.txt
+NENE01729B.txt	NENE01843A.txt	NENE02018B.txt	NENE02043B.txt
+NENE01736A.txt	NENE01843B.txt	NENE02040A.txt	goodiff
+NENE01751A.txt	NENE01971Z.txt	NENE02040B.txt	goostats
+NENE01751B.txt	NENE01978A.txt	NENE02040Z.txt
+
+$ wc -l *.txt
+     300 NENE01729A.txt
+     300 NENE01729B.txt
+     300 NENE01736A.txt
+     300 NENE01751A.txt
+     300 NENE01751B.txt
+     300 NENE01812A.txt
+     300 NENE01843A.txt
+     300 NENE01843B.txt
+     300 NENE01971Z.txt
+     300 NENE01978A.txt
+     300 NENE01978B.txt
+     240 NENE02018B.txt
+     300 NENE02040A.txt
+     300 NENE02040B.txt
+     300 NENE02040Z.txt
+     300 NENE02043A.txt
+     300 NENE02043B.txt
+    5040 total
+
+$ wc -l *.txt | sort -n | head -n55
+     240 NENE02018B.txt
+     300 NENE01729A.txt
+     300 NENE01729B.txt
+     300 NENE01736A.txt
+     300 NENE01751A.txt
+
+$ wc -l *.txt | sort -n | head -n 5
+     300 NENE02040B.txt
+     300 NENE02040Z.txt
+     300 NENE02043A.txt
+     300 NENE02043B.txt
+    5040 total
+
+$ ls *Z.txt
+NENE01971Z.txt	NENE02040Z.txt
+
+$ wc -l *[AB].txt
+     300 NENE01729A.txt
+     300 NENE01729B.txt
+     300 NENE01736A.txt
+     300 NENE01751A.txt
+     300 NENE01751B.txt
+     300 NENE01812A.txt
+     300 NENE01843A.txt
+     300 NENE01843B.txt
+     300 NENE01978A.txt
+     300 NENE01978B.txt
+     240 NENE02018B.txt
+     300 NENE02040A.txt
+     300 NENE02040B.txt
+     300 NENE02043A.txt
+     300 NENE02043B.txt
+    4440 total
+
+$ wc -l *[A-B].txt
+     300 NENE01729A.txt
+     300 NENE01729B.txt
+     300 NENE01736A.txt
+     300 NENE01751A.txt
+     300 NENE01751B.txt
+     300 NENE01812A.txt
+     300 NENE01843A.txt
+     300 NENE01843B.txt
+     300 NENE01978A.txt
+     300 NENE01978B.txt
+     240 NENE02018B.txt
+     300 NENE02040A.txt
+     300 NENE02040B.txt
+     300 NENE02043A.txt
+     300 NENE02043B.txt
+    4440 total
+
+$ wc -l *[A-Z].txt
+     300 NENE01729A.txt
+     300 NENE01729B.txt
+     300 NENE01736A.txt
+     300 NENE01751A.txt
+     300 NENE01751B.txt
+     300 NENE01812A.txt
+     300 NENE01843A.txt
+     300 NENE01843B.txt
+     300 NENE01971Z.txt
+     300 NENE01978A.txt
+     300 NENE01978B.txt
+     240 NENE02018B.txt
+     300 NENE02040A.txt
+     300 NENE02040B.txt
+     300 NENE02040Z.txt
+     300 NENE02043A.txt
+     300 NENE02043B.txt
+    5040 total
+
+echo hi *[A-Z].txt
+hi
+
+$ echo how are you doing
+how are you doing
+
+$ echo hello > testfile.txt
+
+$ cat testfile.txt
+hello
+
+$ echo hello Byron > testfile.txt
+
+catctestfile.txton > testfile.txt
+hello Byron
+
+$ echo Hi there >> testfile.txt
+
+catcho Hi there >> testfile.txt
+hello Byron
+Hi there
+
+$ cd ../creatures
+bash: cd: ../creatures: No such file or directory
+
+$ pwd
+/Volumes/mickles/Desktop/data-shell/north-pacific-gyre/2012-07-03
+
+$ cd ../..
+
+$ pwd
+/Volumes/mickles/Desktop/data-shell
+
+$ cd creatures
+
+$ ls
+basilisk.dat	unicorn.dat
+
+$ head -n 5 basilisk.dat
+COMMON NAME: basilisk
+CLASSIFICATION: basiliscus vulgaris
+UPDATED: 1745-05-02
+CCCCAACGAG
+GAAACAGATC
+
+$ fordfilename in basilisk.dat unicorn.datd
+> do
+> head -n 3 $filename
+> done
+COMMON NAME: basilisk
+CLASSIFICATION: basiliscus vulgaris
+UPDATED: 1745-05-02
+COMMON NAME: unicorn
+CLASSIFICATION: equus monoceros
+UPDATED: 1738-11-24
+
+$ for filename in *.dat
+> do
+> head -n 3 $filename
+> done
+COMMON NAME: basilisk
+CLASSIFICATION: basiliscus vulgaris
+UPDATED: 1745-05-02
+COMMON NAME: unicorn
+CLASSIFICATION: equus monoceros
+UPDATED: 1738-11-24
+
+$ for x in *.dat
+> do
+> head -n 3 $x
+> done
+COMMON NAME: basilisk
+CLASSIFICATION: basiliscus vulgaris
+UPDATED: 1745-05-02
+COMMON NAME: unicorn
+CLASSIFICATION: equus monoceros
+UPDATED: 1738-11-24
+
+ls;olsx-Fn *.dat; do head -n 3 $x; done
+basilisk.dat	unicorn.dat
+basilisk.dat	unicorn.dat
+
+$ ls;ls -a
+basilisk.dat	unicorn.dat
+.		..		basilisk.dat	unicorn.dat
+
+$ cd ../north-pacific-gyre/2012-07-03/
+
+$ ls
+NENE01729A.txt	NENE01812A.txt	NENE01978B.txt	NENE02043A.txt
+NENE01729B.txt	NENE01843A.txt	NENE02018B.txt	NENE02043B.txt
+NENE01736A.txt	NENE01843B.txt	NENE02040A.txt	goodiff
+NENE01751A.txt	NENE01971Z.txt	NENE02040B.txt	goostats
+NENE01751B.txt	NENE01978A.txt	NENE02040Z.txt	testfile.txt
+
+$ for datafile in *[AB.txtxt
+> do
+>    echo $datafile
+>    goostats $datafile
+> done
+NENE01729A.txt
+bash: goostats: command not found
+NENE01729B.txt
+bash: goostats: command not found
+NENE01736A.txt
+bash: goostats: command not found
+NENE01751A.txt
+bash: goostats: command not found
+NENE01751B.txt
+bash: goostats: command not found
+NENE01812A.txt
+bash: goostats: command not found
+NENE01843A.txt
+bash: goostats: command not found
+NENE01843B.txt
+bash: goostats: command not found
+NENE01978A.txt
+bash: goostats: command not found
+NENE01978B.txt
+bash: goostats: command not found
+NENE02018B.txt
+bash: goostats: command not found
+NENE02040A.txt
+bash: goostats: command not found
+NENE02040B.txt
+bash: goostats: command not found
+NENE02043A.txt
+bash: goostats: command not found
+NENE02043B.txt
+bash: goostats: command not found
+
+btgoostatso$da goostats.$stgoostatsehhgoostatsile;    goostats $da
+
+NENE01729A.txt
+NENE01729B.txt
+NENE01736A.txt
+NENE01751A.txt
+NENE01751B.txt
+NENE01812A.txt
+NENE01843A.txt
+NENE01843B.txt
+NENE01978A.txt
+NENE01978B.txt
+NENE02018B.txt
+NENE02040A.txt
+NENE02040B.txt
+NENE02043A.txt
+NENE02043B.txt
+
+$ ls
+NENE01729A.txt		goostats
+NENE01729B.txt		output-NENE01729A.txt
+NENE01736A.txt		output-NENE01729B.txt
+NENE01751A.txt		output-NENE01736A.txt
+NENE01751B.txt		output-NENE01751A.txt
+NENE01812A.txt		output-NENE01751B.txt
+NENE01843A.txt		output-NENE01812A.txt
+NENE01843B.txt		output-NENE01843A.txt
+NENE01971Z.txt		output-NENE01843B.txt
+NENE01978A.txt		output-NENE01978A.txt
+NENE01978B.txt		output-NENE01978B.txt
+NENE02018B.txt		output-NENE02018B.txt
+NENE02040A.txt		output-NENE02040A.txt
+NENE02040B.txt		output-NENE02040B.txt
+NENE02040Z.txt		output-NENE02043A.txt
+NENE02043A.txt		output-NENE02043B.txt
+NENE02043B.txt		testfile.txt
+goodiff
+
+ls$datafileioutput-$datafile;ddone echo $datafile;   bash goostats
+cat goostats
+while getopts J:r: option
+do
+    case "$option" in
+    J) Jarg="$OPTARG"
+       shift $((OPTIND));;
+    r) shift $((OPTIND-1));;
+    esac
+done
+
+sleep 2
+head -3 $1 | cut -d , -f 1 | sort | uniq > $2
+
+$ nano script.sh
+BBCBGCanceBBB[DWroteB9olinese]B-ABNAppendBM-BBoBackupBFile)PrependoYBpYes File ]
+$ ls
+NENE01729A.txt		goostats
+NENE01729B.txt		output-NENE01729A.txt
+NENE01736A.txt		output-NENE01729B.txt
+NENE01751A.txt		output-NENE01736A.txt
+NENE01751B.txt		output-NENE01751A.txt
+NENE01812A.txt		output-NENE01751B.txt
+NENE01843A.txt		output-NENE01812A.txt
+NENE01843B.txt		output-NENE01843A.txt
+NENE01971Z.txt		output-NENE01843B.txt
+NENE01978A.txt		output-NENE01978A.txt
+NENE01978B.txt		output-NENE01978B.txt
+NENE02018B.txt		output-NENE02018B.txt
+NENE02040A.txt		output-NENE02040A.txt
+NENE02040B.txt		output-NENE02040B.txt
+NENE02040Z.txt		output-NENE02043A.txt
+NENE02043A.txt		output-NENE02043B.txt
+NENE02043B.txt		script.sh
+goodiff 		testfile.txt
+
+$ bash script.sh
+NENE01729A.txt
+NENE01729B.txt
+NENE01736A.txt
+NENE01751A.txt
+NENE01751B.txt
+NENE01812A.txt
+NENE01843A.txt
+NENE01843B.txt
+NENE01978A.txt
+NENE01978B.txt
+NENE02018B.txt
+NENE02040A.txt
+NENE02040B.txt
+NENE02043A.txt
+NENE02043B.txt
+output-NENE01729A.txt
+output-NENE01729B.txt
+output-NENE01736A.txt
+output-NENE01751A.txt
+output-NENE01751B.txt
+output-NENE01812A.txt
+output-NENE01843A.txt
+output-NENE01843B.txt
+output-NENE01978A.txt
+output-NENE01978B.txt
+output-NENE02018B.txt
+output-NENE02040A.txt
+output-NENE02040B.txt
+output-NENE02043A.txt
+output-NENE02043B.txt
+
+nanosscript.shsh
+BBCBGCanceBBB[DWroteB10rlinesB]BABNAppendBM-BBoBackupBFile)PrependoYBpYesns for all .txt files that end in A or B
+$ which ba

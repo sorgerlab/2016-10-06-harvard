@@ -1,0 +1,910 @@
+
+$ cd ~
+
+$ git --version
+git version 2.4.9 (Apple Git-60)
+
+$ clear
+
+gitl--version
+git version 2.4.9 (Apple Git-60)
+
+$ export PS1="\n$ "
+
+$ git config --global user.name "James Mickley"
+
+$ git config --global user.email "mickley@gmail.com"""""""
+
+$ git config --global color.ui "auto"
+
+$ git config --global core.editor "nano -w"
+
+$ git config --list
+user.name=James Mickley
+user.email=mickley@gmail.com
+color.ui=auto
+core.editor=nano -w
+
+$ git config --help
+GIT-CONFIG(1)		Git Manual	     GIT-CONFIG(1)
+
+NAME
+       git-config - Get and set repository or global
+       options
+
+SYNOPSIS
+       git config [<file-option>] [type] [-z|--null] name [value [value_regex]]
+       git config [<file-option>] [type] --add name value
+       git config [<file-option>] [type] --replace-all name value [value_regex]
+       git config [<file-option>] [type] [-z|--null] --get name [value_regex]
+       git config [<file-option>] [type] [-z|--null] --get-all name [value_regex]
+:name_regexc[value_regex]option>] [type] [-z|--null] --get-regexp:
+chSnamegURLconfig [<file-option>] [type] [-z|--null] --get-urlmat:
+:ESCOB git config [<file-option>] --unset name [value_regex]
+:ESCOB git config [<file-option>] --unset-all name [value_regex]
+ameCOB git config [<file-option>] --rename-section old_name new_n:
+:ESCOB git config [<file-option>] --remove-section name
+:ESCOB git config [<file-option>] [-z|--null] -l | --list
+:ESCOB git config [<file-option>] --get-color name [default]
+:ESCOA git config [<file-option>] [type] --addlnameavalueme value
+[value_regex]]
+SYNOPSISit config [<file-option>] [type] [-z|--null] name [value
+:ESCOA
+:ESCOA options
+:ESCOA git-config - Get and set repository or global
+NAMEOA
+:ESCOA
+GIT-CONFIG(1)		Git Manual	     GIT-CONFIG(1)
+:ESCOA
+$ cd ~/Desktop
+
+$ mkdir guacamole; cd guacamole
+
+$ pwd
+/Volumes/mickles/Desktop/guacamole
+
+$ git init
+Initialized empty Git repository in /Volumes/mickles/Desktop/guacamole/.git/
+
+$ ls
+
+$ ls -a
+.	..	.git
+
+$ git status
+On branch master
+
+Initial commit
+
+nothing to commit (create/copy files and use "git add" to track)
+
+$ nano instructions.txt
+BBCBGCanceBBB[DWroteB4olinese]B-ABtAppendBM-BBoBackupBFile)PrependoYBpYes File ]
+$ cat instructions.txt
+* Chop avocados
+* Squeeze lime
+* Add salt
+* and mix well
+
+$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	instructions.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+$ git add instructions.txt
+
+$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   instructions.txt
+
+
+$ git commit
+[mastern(root-commit)148e77c6]]Addingpinstructions.txtFile)PrependoYBpYesease enter the commit message for your changes. Lines starti$# with '#' will be ignored, and an empty message aborts the comm$# On branch master
+ 1 file changed, 4 insertions(+)
+ create mode 100644 instructions.txt
+
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.DS_Store
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+$ git log
+commit 48e77c6350d782038ece94c7f407632c453d8cf5
+Author: James Mickley <mickley@gmail.com>
+Date:	Fri Oct 7 13:39:35 2016 -0400
+
+    Adding instructions.txt
+
+    This is a short recipe for guacamole
+
+$ nano instructions.txt
+BBCBGCanceBBB[DWroteB5olinese]B-ABtAppendBM-BBoBackupBFile)PrependoYBpYesop avocados
+$ cat instructions.txt
+* Chop avocados
+* Squeeze lime
+* Add salt
+* and mix well
+* Enjoy!
+
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   instructions.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.DS_Store
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+$ git diff
+diff --git a/instructions.txt b/instructions.txt
+index 82d880a..c3a770e 100644
+--- a/instructions.txt
++++ b/instructions.txt
+@@ -2,3 +2,4 @@
+ * Squeeze lime
+ * Add salt
+ * and mix well
++* Enjoy!
+
+$  git commit -m "Added"enjoy"to"instructions.txt"
+On branch master
+Changes not staged for commit:
+	modified:   instructions.txt
+
+Untracked files:
+	.DS_Store
+
+no changes added to commit
+
+$ git add instructions.txt
+
+$gittcommitn-mr"Addedsenjoy to instructions.txt"
+[master 9758a8f] Added enjoy to instructions.txt
+ 1 file changed, 1 insertion(+)
+
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.DS_Store
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+$ git log
+commit 9758a8f42ef1defa580b01064cafa9915184259a
+Author: James Mickley <mickley@gmail.com>
+Date:	Fri Oct 7 13:51:20 2016 -0400
+
+    Added enjoy to instructions.txt
+
+commit 48e77c6350d782038ece94c7f407632c453d8cf5
+Author: James Mickley <mickley@gmail.com>
+Date:	Fri Oct 7 13:39:35 2016 -0400
+
+    Adding instructions.txt
+
+    This is a short recipe for guacamole
+
+$ nano ingredients.txt
+BBCBGCanceBBB[DWroteB3olinese]B-ABxAppendBM-BBoBackupBFile)PrependoYBpYes File ]
+$ cat ingredients.txt
+* 2 Avocados
+* 1 lime
+* 2 tsp salt
+
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.DS_Store
+	ingredients.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+$ git add ingredients.txt
+
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   ingredients.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.DS_Store
+
+
+$ git commit
+[mastern5d819f4]rAddBanringredientsAfiledBM-BBoBackupBFile)PrependoYBpYesease enter the commit message for your changes. Lines starti$# with '#' will be ignored, and an empty message aborts the comm$# On branch master
+ 1 file changed, 3 insertions(+)
+ create mode 100644 ingredients.txt
+
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.DS_Store
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+$ git log
+commit 5d819f454b1df481a6681b78e4642d9c3bb28ac8
+Author: James Mickley <mickley@gmail.com>
+Date:	Fri Oct 7 14:03:33 2016 -0400
+
+    Add an ingredients file
+
+    This contains the amounts of each ingredient
+
+commit 9758a8f42ef1defa580b01064cafa9915184259a
+Author: James Mickley <mickley@gmail.com>
+Date:	Fri Oct 7 13:51:20 2016 -0400
+
+    Added enjoy to instructions.txt
+
+commit 48e77c6350d782038ece94c7f407632c453d8cf5
+Author: James Mickley <mickley@gmail.com>
+Date:B	Fri Oct 7 13:39:35 2016 -0400
+:ESCOB
+:ESCAdding instructions.txt
+:ESCOB
+:ESCThis is a short recipe for guacamole
+(ESCAdd an ingredients file
+:ESCOA
+Date:A	Fri Oct 7 14:03:33 2016 -0400
+Author: James Mickley <mickley@gmail.com>
+commit 5d819f454b1df481a6681b78e4642d9c3bb28ac8
+:ESCOA
+$ nano instructions.txt
+BBCBGCanceBBB[DWroteB6olinese]B-ABtAppendBM-BBoBackupBFile)PrependoYBpYesop avocados
+$ nano ingredients.txt
+BBCBGCanceBBB[DWroteB4olinese]B-ABxAppendBM-BBoBackupBFile)PrependoYBpYesAvocados
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   ingredients.txt
+	modified:   instructions.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.DS_Store
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+$ gitodiff Onion >> ingredients.txt
+diff --git a/ingredients.txt b/ingredients.txt
+index d9abe99..3a062a5 100644
+--- a/ingredients.txt
++++ b/ingredients.txt
+@@ -1,3 +1,4 @@
+ * 2 Avocados
+ * 1 lime
+ * 2 tsp salt
++* 1/2 onion
+diff --git a/instructions.txt b/instructions.txt
+index c3a770e..830457f 100644
+--- a/instructions.txt
++++ b/instructions.txt
+@@ -1,4 +1,5 @@
+ * Chop avocados
++* Chop onion
+:*SSqueeze lime
+:*SAdd salt
+:*Sand mix well
+:
+$ git diff ingredients.txt
+diff --git a/ingredients.txt b/ingredients.txt
+index d9abe99..3a062a5 100644
+--- a/ingredients.txt
++++ b/ingredients.txt
+@@ -1,3 +1,4 @@
+ * 2 Avocados
+ * 1 lime
+ * 2 tsp salt
++* 1/2 onion
+
+$ lst-add .
+.			.git
+..			ingredients.txt
+.DS_Store		instructions.txt
+
+$ rm .DS_Store
+
+$ git add .
+
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   ingredients.txt
+	modified:   instructions.txt
+
+
+$ git commit -m "Added onion to the recipe"
+[master bfa7a55] Added onion to the recipe
+ 2 files changed, 2 insertions(+)
+
+$ git log
+commit bfa7a5547a530bf15bbf4034a9053dfeefb4faaa
+Author: James Mickley <mickley@gmail.com>
+Date:	Fri Oct 7 14:11:15 2016 -0400
+
+    Added onion to the recipe
+
+commit 5d819f454b1df481a6681b78e4642d9c3bb28ac8
+Author: James Mickley <mickley@gmail.com>
+Date:	Fri Oct 7 14:03:33 2016 -0400
+
+    Add an ingredients file
+
+    This contains the amounts of each ingredient
+
+commit 9758a8f42ef1defa580b01064cafa9915184259a
+Author: James Mickley <mickley@gmail.com>
+Date:B	Fri Oct 7 13:51:20 2016 -0400
+:ESCOB
+:ESCAdded enjoy to instructions.txt
+:ESCOB
+commit 48e77c6350d782038ece94c7f407632c453d8cf5
+Author: James Mickley <mickley@gmail.com>
+Date:B	Fri Oct 7 13:39:35 2016 -0400
+:ESCOB
+:ESCAdding instructions.txt
+:ESCOB
+:ESCThis is a short recipe for guacamole
+(END)B
+$ git log -2
+commit bfa7a5547a530bf15bbf4034a9053dfeefb4faaa
+Author: James Mickley <mickley@gmail.com>
+Date:	Fri Oct 7 14:11:15 2016 -0400
+
+    Added onion to the recipe
+
+commit 5d819f454b1df481a6681b78e4642d9c3bb28ac8
+Author: James Mickley <mickley@gmail.com>
+Date:	Fri Oct 7 14:03:33 2016 -0400
+
+    Add an ingredients file
+
+    This contains the amounts of each ingredient
+
+$ git log --oneline
+bfa7a55 Added onion to the recipe
+5d819f4 Add an ingredients file
+9758a8f Added enjoy to instructions.txt
+48e77c6 Adding instructions.txt
+
+$ git log --stat
+commit bfa7a5547a530bf15bbf4034a9053dfeefb4faaa
+Author: James Mickley <mickley@gmail.com>
+Date:	Fri Oct 7 14:11:15 2016 -0400
+
+    Added onion to the recipe
+
+ ingredients.txt  | 1 +
+ instructions.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 5d819f454b1df481a6681b78e4642d9c3bb28ac8
+Author: James Mickley <mickley@gmail.com>
+Date:	Fri Oct 7 14:03:33 2016 -0400
+
+    Add an ingredients file
+
+:
+$ git log --help
+GIT-LOG(1)		Git Manual		GIT-LOG(1)
+
+NAME
+       git-log - Show commit logs
+
+SYNOPSIS
+       git log [<options>] [<revision range>] [[--] <path>...]
+
+DESCRIPTION
+       Shows the commit logs.
+
+       The command takes options applicable to the git
+       rev-list command to control what is shown and how,
+       and options applicable to the git diff-* commands
+       to control how the changes each commit introduces
+       are shown.
+:ESCOB
+OPTIONS
+:ESCOB --follow
+:ESCOB	   Continue listing the history of a file beyond
+:ESCOB	   renames (works only for a single file).
+:ESCOB
+:ESCOB --no-decorate, --decorate[=short|full|no]
+:ESCOB	   Print out the ref names of any commits that are
+:ESCOB	   shown. If short is specified, the ref name
+:ESCOB	   prefixes refs/heads/, refs/tags/ and
+:ESCOB	   refs/remotes/ will not be printed. If full is
+:ESCOB	   specified, the full ref name (including prefix)
+:ESCOB	   will be printed. The default option is short.
+:ESCOB
+:ESCOB --source
+:ESCOB	   Print out the ref name given on the command
+:ESCOB	   line by which each commit was reached.
+:ESCOB
+:ESCOB --use-mailmap
+:ESCOB	   Use mailmap file to map author and committer
+:ESCOB	   names and email addresses to canonical real
+:ESCOB	   names and email addresses. See git-shortlog(1).
+:ESCOB
+:ESCOB --full-diff
+:ESCOB	   Without this flag, git log -p <path>...  shows
+:ESCOB	   commits that touch the specified paths, and
+:ESCOB	   diffs about the same specified paths. With
+:ESCOB	   this, the full diff is shown for commits that
+:ESCOB	   touch the specified paths; this means that
+:ESCOB	   "<path>..." limits only commits, and doesn't
+:ESCOB	   limit diff for those commits.
+:ESCOB
+:ESCOB	   Note that this affects all diff-based output
+:ESCOB	   types, e.g. those produced by --stat, etc.
+:ESCOB
+:ESCOB --log-size
+:ESCOB	   Include a line "log size <number>" in the
+:ESCOB	   output for each commit, where <number> is the
+:ESCOB	   length of that commit's message in bytes.
+:ESCOB	   Intended to speed up tools that read log
+:ESCOB	   messages from git log output by allowing them
+:ESCOB	   to allocate space in advance.
+:ESCOB
+:ESCOB -L <start>,<end>:<file>, -L :<regex>:<file>
+:ESCOB	   Trace the evolution of the line range given by
+:ESCOB	   "<start>,<end>" (or the funcname regex <regex>)
+:ESCOB	   within the <file>. You may not give any
+:ESCOB	   pathspec limiters. This is currently limited to
+:ESCOB	   a walk starting from a single revision, i.e.,
+:ESCOB	   you may only give zero or one positive revision
+:ESCOB	   arguments. You can specify this option more
+:ESCOB	   than once.
+:ESCOB
+:ESCOB	   <start> and <end> can take one of these forms:
+:ESCOB
+:ESCOB	   o   number
+:ESCOB
+:ESCOB	       If <start> or <end> is a number, it
+:ESCOB	       specifies an absolute line number (lines
+:ESCOB	       count from 1).
+:ESCOB
+:ESCOB	   o   /regex/
+:ESCOB
+:ESCOB	       This form will use the first line matching
+:ESCOB	       the given POSIX regex. If <start> is a
+:ESCOB	       regex, it will search from the end of the
+:ESCOB	       previous -L range, if any, otherwise from
+:ESCOB	       the start of file. If <start> is
+:ESCOB	       "^/regex/", it will search from the start
+:ESCOB	       of file. If <end> is a regex, it will
+:ESCOB	       search starting at the line given by
+:ESCOB	       <start>.
+:ESCOB
+:ESCOB	   o   +offset or -offset
+:ESCOB
+:ESCOB	       This is only valid for <end> and will
+:ESCOB	       specify a number of lines before or after
+:ESCOA
+:ESCOA	       count from 1).
+:ESCOA	       specifies an absolute line number (lines
+:ESCOA	       If <start> or <end> is a number, it
+:ESCOA
+:ESCOA	   o   number
+:ESCOA
+:ESCOA	   <start> and <end> can take one of these forms:
+:ESCOA
+:ESCOA	   than once.
+:ESCOA	   arguments. You can specify this option more
+:ESCOA	   you may only give zero or one positive revision
+:ESCOA	   a walk starting from a single revision, i.e.,
+:ESCOA	   pathspec limiters. This is currently limited to
+:ESCOA	   within the <file>. You may not give any
+:ESCOA	   "<start>,<end>" (or the funcname regex <regex>)
+:ESCOA	   Trace the evolution of the line range given by
+:ESCOA -L <start>,<end>:<file>, -L :<regex>:<file>
+:ESCOA
+:ESCOA	   to allocate space in advance.
+:ESCOA	   messages from git log output by allowing them
+:
+$ git status
+On branch master
+nothing to commit, working directory clean
+
+$ git diff HEAD instructions.txt
+
+$ nano instructions.txt
+BBCBGCanceBBB[DWroteB7olinese]B-ABtAppendBM-BBoBackupBFile)PrependoYBpYesop avocados
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   instructions.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+$ git diff
+diff --git a/instructions.txt b/instructions.txt
+index 830457f..a09944c 100644
+--- a/instructions.txt
++++ b/instructions.txt
+@@ -1,6 +1,7 @@
+ * Chop avocados
+ * Chop onion
+ * Squeeze lime
++* Squeeze orange
+ * Add salt
+ * and mix well
+ * Enjoy!
+
+gitodifftHEADiinstructions.txt
+diff --git a/instructions.txt b/instructions.txt
+index 830457f..a09944c 100644
+--- a/instructions.txt
++++ b/instructions.txt
+@@ -1,6 +1,7 @@
+ * Chop avocados
+ * Chop onion
+ * Squeeze lime
++* Squeeze orange
+ * Add salt
+ * and mix well
+ * Enjoy!
+
+$ git diff HEAD~1 instructions.txt
+diff --git a/instructions.txt b/instructions.txt
+index c3a770e..a09944c 100644
+--- a/instructions.txt
++++ b/instructions.txt
+@@ -1,5 +1,7 @@
+ * Chop avocados
++* Chop onion
+ * Squeeze lime
++* Squeeze orange
+ * Add salt
+ * and mix well
+ * Enjoy!
+
+$ git log --oneline
+bfa7a55 Added onion to the recipe
+5d819f4 Add an ingredients file
+9758a8f Added enjoy to instructions.txt
+48e77c6 Adding instructions.txt
+
+$ git diff 9758a8f instructions.txt
+diff --git a/instructions.txt b/instructions.txt
+index c3a770e..a09944c 100644
+--- a/instructions.txt
++++ b/instructions.txt
+@@ -1,5 +1,7 @@
+ * Chop avocados
++* Chop onion
+ * Squeeze lime
++* Squeeze orange
+ * Add salt
+ * and mix well
+ * Enjoy!
+
+$ rm instructions.txt
+
+$ nano instructions.txt
+BBCBGCanceBBB[DWroteB1olinel]BM-ABtAppendBM-BBoBackupBFile)PrependoYBpYes File ]
+$ git checkout HEAD instructions.txt
+
+$ cat instructions.txt
+* Chop avocados
+* Chop onion
+* Squeeze lime
+* Add salt
+* and mix well
+* Enjoy!
+
+$ git status
+On branch master
+nothing to commit, working directory clean
+
+giticheckoutiHEAD~1iinstructions.txt
+
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   instructions.txt
+
+
+$ git diff
+
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   instructions.txt
+
+
+itncheckouttHEADDtinstructions.txt.txt
+
+statuscheckout HEAD instructions.txt
+On branch master
+nothing to commit, working directory clean
+
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.DS_Store
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+$ nano .gitignore
+BBCBGCanceBBB[DWroteB3olinese]B-ABNAppendBM-BBoBackupBFile)PrependoYBpYes File ]
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+$ nano a.txt
+BBCBGCanceBBB[DWroteB1olinel]BM-ABNAppendBM-BBoBackupBFile)PrependoYBpYes File ]
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+$ git add -f a.txt
+
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   a.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+
+
+$ git reset HEAD
+
+statusreset HEAD
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+$ commit -m "Added a .gitignore fileeto the project"
+bash: commit: command not found
+
+$ 1@mmit -m "Added a .gitignore file to the project"
+On branch master
+Untracked files:
+	.gitignore
+
+nothing added to commit but untracked files present
+
+$ git add .gitignore
+
+commita-m "Addednar.gitignore file to the project"
+[master 74ab8f9] Added a .gitignore file to the project
+ 1 file changed, 3 insertions(+)
+ create mode 100644 .gitignore
+
+$ git remote add origin https://github.com/mickley/guacamole.git
+
+$ git remot -v
+git: 'remot' is not a git command. See 'git --help'.
+
+Did you mean this?
+	remote
+
+$ git remote -v
+origin	https://github.com/mickley/guacamole.git (fetch)
+origin	https://github.com/mickley/guacamole.git (push)
+
+$ git push origin master
+Counting objects: 16, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (16/16), 1.56 KiB | 0 bytes/s, done.
+Total 16 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/mickley/guacamole.git
+ * [new branch]      master -> master
+
+$ cat instructions.txt
+* Chop avocados
+* Chop onion
+* Squeeze lime
+* Add salt
+* and mix well
+* Enjoy!
+
+$ git pull origin master
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/mickley/guacamole
+ * branch	     master	-> FETCH_HEAD
+   74ab8f9..f104331  master	-> origin/master
+Updating 74ab8f9..f104331
+Fast-forward
+ instructions.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+catiinstructions.txtster
+* Chop avocados
+* Chop onion
+* Squeeze lime
+* Add salt
+* and mix well
+
+
+catiinstructions.txt
+* Chop avocados
+* Chop onion
+* Squeeze lime
+* Add salt
+* and mix well
+
+
+$ nano instructions.txt
+BBCBGCanceBBB[DWroteB7olinese]B-ABtAppendBM-BBoBackupBFile)PrependoYBpYesop avocados
+catano instructions.txt
+* Chop avocados
+* Chop onion
+* Squeeze lime
+* Squeeze orange
+* Add salt
+* and mix well
+
+
+$ git add instructions.txt
+
+$ git commit -m "I like orange in my guac"
+[master 0712a06] I like orange in my guac
+ 1 file changed, 1 insertion(+)
+
+$ git status
+On branch master
+nothing to commit, working directory clean
+
+$ git push origin master
+To https://github.com/mickley/guacamole.git
+ ! [rejected]	     master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/mickley/guacamole.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+$ git status
+On branch master
+nothing to commit, working directory clean
+
+$ git pull origin master
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/mickley/guacamole
+ * branch	     master	-> FETCH_HEAD
+   f104331..18954bb  master	-> origin/master
+Auto-merging instructions.txt
+CONFLICT (content): Merge conflict in instructions.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+$ cat instructions.txt
+* Chop avocados
+* Chop onion
+* Squeeze lime
+<<<<<<< HEAD
+* Squeeze orange
+=======
+* Add jalapenos (chopped)
+>>>>>>> 18954bb8eabccae35d760f9cf4ab2a9773430538
+* Add salt
+* and mix well
+
+
+$ nano instructions.txt
+BModifiedBlBB^JBWJustifyB^WBRWhereiIB^VBPNextPPaB^UBCUnCutxTB^TBCTo Spellop avocados
+
+
+
+BBCBGCanceBBB[DWroteB7olinese]B-ABtAppendBM-BBoBackupBFile)Prepend YB Yes
+$ cat instructions.txt
+* Chop avocados
+* Chop onion
+* Squeeze lime
+* Squeeze orange
+* Add salt
+* and mix well
+
+
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+	both modified:	 instructions.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+$ git add instructions.txt
+
+$ git status
+On branch master
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+nothing to commit, working directory clean
+
+$ git commit -m "Removed Byron's version"
+[master 350b013] Removed Byron's version
+
+$ git status
+On branch master
+nothing to commit, working directory clean
+
+$ git push origin master
+Counting objects: 4, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 467 bytes | 0 bytes/s, done.
+Total 4 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local objects.
